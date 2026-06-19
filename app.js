@@ -1,73 +1,15 @@
 
 // import { createClient } from '@supabase/supabase-js'
 // Create a single supabase client for interacting with your database
-// const supabase = createClient('https://ppovyzzhqjgnthbcbfxd.supabase.co', 'sb_publishable_Zf7TySWJVCgD5rJlO1Cg3w__2FgmHZm')
-const supabase = window.createClient(
-  'https://ppovyzzhqjgnthbcbfxd.supabase.co',
-  'sb_publishable_Zf7TySWJVCgD5rJlO1Cg3w__2FgmHZm'
+var supabase = window.supabase.createClient('https://ppovyzzhqjgnthbcbfxd.supabase.co', 'sb_publishable_Zf7TySWJVCgD5rJlO1Cg3w__2FgmHZm'
 );
 window.onload = async function(){
   const { data, error } = await supabase
-  .from('Post Table')
+  .from('Posts')
   .select("*")
-  console.log(data);
+  console.log(data, "hello");
 }
 var cardBg = "https://source.unsplash.com/200x200/?nature"
-
-// var savedEmail = "u.capri@gmail.com"
-// var savedPassword = "abcde"
-
-// SIGNUP
-// function SignUp() {
-//   var username = document.getElementById("user").value
-//   var password = document.getElementById("passwordd").value
-
-//   if (username === Email && password === Password) {
-//     document.getElementById("SignupPage").style.display = "none"
-//     document.getElementById("appPage").style.display = "block"
-//   } else {
-//     alert("Invalid Email or Password")
-//   }
-// }
-
-
-// SIGNUP
-// function SignUp() {
-//   var username = document.getElementById("user").value;
-//   var password = document.getElementById("passwordd").value;
-
-//   if (username !== "" && password !== "") {
-//     document.getElementById("SignupPage").style.display = "none";
-//     document.getElementById("loginPage").style.display = "flex";
-//   } else {
-//     alert("Please enter Email and Password");
-//   }
-// }
-// LOGIN
-// function login() {
-//   var username = document.getElementById("username").value;
-//   var password = document.getElementById("password").value;
-
-//   if (username !== "" && password !== "") {
-//     document.getElementById("loginPage").style.display = "flex";
-//     document.getElementById("appPage").style.display = "block";
-//   } else {
-//     alert("Please enter Email and Password");
-//   }
-// }
-
-// // LOGIN
-// function login() {
-//   var username = document.getElementById("username").value
-//   var password = document.getElementById("password").value
-
-//   if (username === savedEmail && password === savedPassword) {
-//     document.getElementById("loginPage").style.display = "none"
-//     document.getElementById("appPage").style.display = "block"
-//   } else {
-//     alert("Invalid Email or Password")
-//   }
-// }
 
 function SignUp() {
   var username = document.getElementById("user").value;
