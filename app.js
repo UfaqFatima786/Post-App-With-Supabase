@@ -1,7 +1,11 @@
 
-import { createClient } from '@supabase/supabase-js'
+// import { createClient } from '@supabase/supabase-js'
 // Create a single supabase client for interacting with your database
-const supabase = createClient('https://ppovyzzhqjgnthbcbfxd.supabase.co', 'sb_publishable_Zf7TySWJVCgD5rJlO1Cg3w__2FgmHZm')
+// const supabase = createClient('https://ppovyzzhqjgnthbcbfxd.supabase.co', 'sb_publishable_Zf7TySWJVCgD5rJlO1Cg3w__2FgmHZm')
+const supabase = window.createClient(
+  'https://ppovyzzhqjgnthbcbfxd.supabase.co',
+  'sb_publishable_Zf7TySWJVCgD5rJlO1Cg3w__2FgmHZm'
+);
 window.onload = async function(){
   const { data, error } = await supabase
   .from('Post Table')
