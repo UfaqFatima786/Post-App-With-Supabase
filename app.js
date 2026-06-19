@@ -1,3 +1,13 @@
+
+import { createClient } from '@supabase/supabase-js'
+// Create a single supabase client for interacting with your database
+const supabase = createClient('https://ppovyzzhqjgnthbcbfxd.supabase.co', 'sb_publishable_Zf7TySWJVCgD5rJlO1Cg3w__2FgmHZm')
+window.onload = async function(){
+  const { data, error } = await supabase
+  .from('Post Table')
+  .select("*")
+  console.log(data);
+}
 var cardBg = "https://source.unsplash.com/200x200/?nature"
 
 // var savedEmail = "u.capri@gmail.com"
@@ -18,29 +28,29 @@ var cardBg = "https://source.unsplash.com/200x200/?nature"
 
 
 // SIGNUP
-function SignUp() {
-  var username = document.getElementById("user").value;
-  var password = document.getElementById("passwordd").value;
+// function SignUp() {
+//   var username = document.getElementById("user").value;
+//   var password = document.getElementById("passwordd").value;
 
-  if (username !== "" && password !== "") {
-    document.getElementById("SignupPage").style.display = "none";
-    document.getElementById("loginPage").style.display = "flex";
-  } else {
-    alert("Please enter Email and Password");
-  }
-}
+//   if (username !== "" && password !== "") {
+//     document.getElementById("SignupPage").style.display = "none";
+//     document.getElementById("loginPage").style.display = "flex";
+//   } else {
+//     alert("Please enter Email and Password");
+//   }
+// }
 // LOGIN
-function login() {
-  var username = document.getElementById("username").value;
-  var password = document.getElementById("password").value;
+// function login() {
+//   var username = document.getElementById("username").value;
+//   var password = document.getElementById("password").value;
 
-  if (username !== "" && password !== "") {
-    document.getElementById("loginPage").style.display = "none";
-    document.getElementById("appPage").style.display = "block";
-  } else {
-    alert("Please enter Email and Password");
-  }
-}
+//   if (username !== "" && password !== "") {
+//     document.getElementById("loginPage").style.display = "flex";
+//     document.getElementById("appPage").style.display = "block";
+//   } else {
+//     alert("Please enter Email and Password");
+//   }
+// }
 
 // // LOGIN
 // function login() {
@@ -55,6 +65,29 @@ function login() {
 //   }
 // }
 
+function SignUp() {
+  var username = document.getElementById("user").value;
+  var password = document.getElementById("passwordd").value;
+
+  if (username !== "" && password !== "") {
+    document.getElementById("SignupPage").style.display = "none";
+    document.getElementById("loginPage").style.display = "flex";
+  } else {
+    alert("Please enter Email and Password");
+  }
+}
+
+function login() {
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("password").value;
+
+  if (username !== "" && password !== "") {
+    document.getElementById("loginPage").style.display = "none"; // flex nahi
+    document.getElementById("appPage").style.display = "block";
+  } else {
+    alert("Please enter Email and Password");
+  }
+}
 // POST
 function post() {
   var title = document.getElementById("title")
